@@ -42,7 +42,7 @@ app.post('/send', (req, res) => {
   const mailOptions = {
     from: process.env.SMTP_FROM,
     to: process.env.SMTP_TO,
-    subject: process.env.SMTP_SUBJECT,
+    subject: req.body.subject || process.env.SMTP_SUBJECT,
     text: req.body.message,
   };
 
