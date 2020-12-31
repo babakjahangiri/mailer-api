@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-  if (req.body.apikey !== process.env.API_KEY) {
+  if (req.body.api_key !== process.env.API_KEY) {
     res.send('validation failed !').status(200);
   }
 
