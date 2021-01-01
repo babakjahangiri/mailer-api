@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 app.post('/send', (req, res) => {
   if (req.body.api_key !== process.env.API_KEY) {
     res.send('validation failed !').status(200);
+    return;
   }
 
   //console.log("Start sending an email ...")
