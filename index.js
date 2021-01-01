@@ -44,7 +44,7 @@ app.post('/send', (req, res) => {
     from: process.env.SMTP_FROM,
     to: process.env.SMTP_TO,
     subject: req.body.subject || process.env.SMTP_SUBJECT,
-    text: req.body.message,
+    html: req.body.message,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
