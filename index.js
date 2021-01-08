@@ -21,7 +21,10 @@ app.get('/', (req, res) => {
 
 app.post('/send', (req, res) => {
   if (req.body.api_key !== process.env.API_KEY) {
-    res.send('validation failed !').status(200);
+    res.status(500).json({
+      success: false,
+      error: 'API Key is not correct!',
+    });
     return;
   }
 
